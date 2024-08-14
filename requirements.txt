@@ -4,4 +4,6 @@ langchain-community
 langchainhub 
 langchain-chroma
 sentence-transformers
+langchain-huggingface
 pypdf
+python-dotenv
