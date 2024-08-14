@@ -1,4 +1,4 @@
-### Chat with Docs
+### Chat with Docs !!
 
 - [ ] Upload documents
 - [x] Create embeddings and store them in ChromaDB
