@@ -1,5 +1,6 @@
 ### Chat with Docs
 
 - [ ] Upload documents
-- [ ] Create embeddings and store them in ChromaDB
+- [x] Create embeddings and store them in ChromaDB
+- [x] Huggingface LLMs integration
 - [ ] Develop chat memory
