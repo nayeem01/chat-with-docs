@@ -4,7 +4,7 @@
 - [x] Create embeddings and store them in ChromaDB
 - [x] Huggingface LLMs integration
 - [x] LLM chat with websocket
-- [x] Develop chat memory
+- [x] Conversational RAG
 
 ### List of LLMs
 
