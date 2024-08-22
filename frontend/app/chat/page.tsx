@@ -12,8 +12,8 @@ interface Message {
 export default function chatHome() {
   return (
     <>
-      {/* <Navbar /> */}
-      <div className="drawer  lg:drawer-open">
+      <Navbar />
+      <div className="drawer  lg:drawer-open" id="#my-div2">
         <input
           id="left-sidebar-drawer"
           type="checkbox"

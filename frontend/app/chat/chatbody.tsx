@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { ws } from "./socket";
-
+import Typewriter from "./Typewriter";
 interface Message {
   body: string;
   sender: string;
@@ -11,7 +11,6 @@ interface Message {
 export default function ChatBody() {
   const [mymessages, setMymessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
-
   const sendMessage = () => {
     ws.send(
       JSON.stringify({
@@ -39,22 +38,8 @@ export default function ChatBody() {
 
   return (
     <div className="drawer-content flex flex-col">
-      <main className="flex-1 overflow-y-auto md:pt-4 pt-4 px-6 bg-base-200">
+      <main className="flex-1 overflow-y-auto md:pt-4 pt-4 px-6 bg-base-200 ">
         {/* Chat start */}
-        {/* <div className="chat chat-start">
-          <div className="chat-image avatar">
-            <div className="w-10 rounded-full">
-              <img alt="Ai avatar" src="/assets/bot.jpg" />
-            </div>
-          </div>
-          <div className="chat-header">
-            Obi-Wan Kenobi
-            <time className="text-xs opacity-50 pl-1">12:45</time>
-          </div>
-          <div className="chat-bubble chat-bubble-primary">
-            What kind of nonsense is this
-          </div>
-        </div> */}
 
         {/* Dynamic user messages */}
         {mymessages.map((message, index) => {
@@ -68,7 +53,8 @@ export default function ChatBody() {
                 </div>
                 <div className="chat-header">AI</div>
                 <div className="chat-bubble chat-bubble-primary">
-                  {message.body}
+                  <Typewriter text={message.body} delay={15} infinite={false} />
+                  {/* {message.body} */}
                 </div>
               </div>
             );

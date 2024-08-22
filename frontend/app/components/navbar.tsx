@@ -1,8 +1,11 @@
-import React from "react";
-import { useGlobalContext } from "../Context/store";
+import React, { useState } from "react";
 
 export default function Navbar() {
-  const { llmToggle, setLLM } = useGlobalContext();
+  const [selectedValue, setSelectedValue] = useState("LLM Model");
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(event.target.value);
+  };
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -30,18 +33,24 @@ export default function Navbar() {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Research Buddy</div>
+          <div className="flex-1 px-2 mx-2">Chat with Docs</div>
+
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <select className="select select-accent w-full max-w-xs mr-10">
-                  <option disabled selected>
+                <select
+                  id="dropdown"
+                  className="select select-accent w-full max-w-xs mr-10"
+                  value={selectedValue}
+                  onChange={handleChange}
+                >
+                  <option disabled value="LLM Model">
                     LLM Model
                   </option>
-                  <option>Auto</option>
-                  <option>Dark mode</option>
-                  <option>Light mode</option>
+                  <option value="model1">Model 1</option>
+                  <option value="model2">Model 2</option>
+                  {/* Add more options as needed */}
                 </select>
               </li>
               <li>
@@ -50,8 +59,10 @@ export default function Navbar() {
                     <input
                       type="checkbox"
                       className="toggle toggle-accent"
-                      checked={false}
-                      onClick={() => setLLM(!llmToggle)}
+                      checked={false} // Use state if needed
+                      onChange={(e) => {
+                        /* Handle checkbox change */
+                      }}
                     />
                   </label>
                 </div>
