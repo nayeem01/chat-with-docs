@@ -38,7 +38,7 @@ export default function ChatBody() {
 
   return (
     <div className="drawer-content flex flex-col">
-      <main className="flex-1 overflow-y-auto md:pt-4 pt-4 px-6 bg-base-200 ">
+      <main className="flex-1 md:pt-4 pt-4 px-6 bg-base-200 ">
         {/* Chat start */}
 
         {/* Dynamic user messages */}
@@ -82,7 +82,7 @@ export default function ChatBody() {
       </main>
 
       {/* Input field and send button fixed at bottom */}
-      <div className="flex join fixed w-2/3 bottom-0 p-5">
+      <div className="flex bottom-0 p-5 bg-base-200">
         <input
           type="text"
           placeholder="Send a message"
@@ -106,25 +106,4 @@ export default function ChatBody() {
       </div>
     </div>
   );
-}
-
-{
-  /* {message.toLowerCase().startsWith("AI") && (
-            <div className="badge badge-info gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-4 h-4 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-              LLM
-            </div>
-          )} */
 }

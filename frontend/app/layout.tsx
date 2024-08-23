@@ -1,21 +1,19 @@
-import type { Metadata } from 'next'
-import { GlobalContextProvider } from './Context/store'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from './components/navbar'
-import Sidebar from './components/sidebar'
+import type { Metadata } from "next";
+import { GlobalContextProvider } from "./Context/store";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Research Buddy',
-  description: '',
-}
+  title: "Chat with Doc",
+  description: "",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" data-theme="night">
@@ -23,5 +21,5 @@ export default function RootLayout({
         <GlobalContextProvider>{children}</GlobalContextProvider>
       </body>
     </html>
-  )
+  );
 }
