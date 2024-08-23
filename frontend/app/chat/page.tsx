@@ -1,6 +1,7 @@
 "use client";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
+import Toast from "../components/toast";
 import ChatBody from "./chatbody";
 
 export default function chatHome() {
@@ -16,6 +17,7 @@ export default function chatHome() {
         <Sidebar />
         <ChatBody />
       </div>
+      <Toast notification="Connected to WebSocket server" />
     </>
   );
 }
