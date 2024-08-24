@@ -1,10 +1,11 @@
 // import { io } from "socket.io-client";
-
+"use client";
 // export const socket = io("ws://127.0.0.1:8000/ws");
-const ws = new WebSocket("ws://127.0.0.1:8000/ws");
 
+const ws = new WebSocket("ws://127.0.0.1:8000/ws");
+// const { llmToggle, setLLM } = useGlobalContext();
 ws.onopen = () => {
-  console.log("Connected to WebSocket server");
+  // console.log("Connected to WebSocket server");
   document.getElementById("myToast")?.classList.remove("hidden");
 
   setTimeout(function () {
@@ -13,7 +14,7 @@ ws.onopen = () => {
 };
 
 ws.onclose = () => {
-  console.log("Disconnected from WebSocket server");
+  // console.log("Disconnected from WebSocket server");
 };
 
 export { ws };

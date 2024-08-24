@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="night">
-      <body className={inter.className}>
-        <GlobalContextProvider>{children}</GlobalContextProvider>
-      </body>
+      <GlobalContextProvider>
+        <body className={inter.className}>{children}</body>
+      </GlobalContextProvider>
     </html>
   );
 }

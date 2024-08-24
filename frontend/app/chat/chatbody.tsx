@@ -82,13 +82,13 @@ export default function ChatBody() {
       </main>
 
       {/* Input field and send button fixed at bottom */}
-      <div className="flex bottom-0 p-5 bg-base-200">
+      <div className="flex bottom-0 p-5  justify-center items-center bg-base-200">
         <input
           type="text"
           placeholder="Send a message"
           value={message}
           onChange={handleChanges}
-          className="input input-bordered input-accent w-full xs"
+          className="input input-bordered input-accent w-1/3 xs"
           onKeyDown={handleKeyboardEvent}
         />
         <button
